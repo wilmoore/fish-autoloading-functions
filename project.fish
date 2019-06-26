@@ -18,7 +18,7 @@ function project
         tmux -2 new-session -d -c $project_path -s "$project_name" -n "$project_name"
       end
     else
-      # new session, force 256 colors, attach if session exists, set start path to project path, name session and window, start vim
+      # new session, force 256 colors, attach if session exists, set start path to project path, name session and window
       tmux -2 new-session -AD -c $project_path -s "$project_name" -n "$project_name"
     end
   else
