@@ -15,11 +15,11 @@ function project
       tmux has-session -t "$project_name" 2>/dev/null
 
       if test ! $status -eq 0
-        tmux -2 new-session -d -c $project_path -s "$project_name" -n "IDE" $EDITOR
+        tmux -2 new-session -d -c $project_path -s "$project_name" -n "$project_name"
       end
     else
       # new session, force 256 colors, attach if session exists, set start path to project path, name session and window, start vim
-      tmux -2 new-session -AD -c $project_path -n "IDE" -s "$project_name" $EDITOR
+      tmux -2 new-session -AD -c $project_path -s "$project_name" -n "$project_name"
     end
   else
     echo "~\$ mkdir -p '$project_path'"
