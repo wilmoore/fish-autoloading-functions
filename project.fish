@@ -11,7 +11,7 @@ function project
   set project_name (basename $project_path | tr '.' '_' | tr '@' '_')
 
   if test -d "$project_path"
-    if [ (count $argv) -eq 2 -a "$argv[2]" = "--detached" ];
+    if test (count $argv) -eq 2 -a "$argv[2]" = "--detached"
       tmux has-session -t "$project_name" 2>/dev/null
 
       if test ! $status -eq 0
@@ -25,6 +25,9 @@ function project
     echo "~\$ mkdir -p '$project_path'"
   end
 end
+
+# complete existing tmux sessions
+complete -x -c project -d 'session' -s n -x -a '(tmux ls | cut -d: -f1)'
 
 # "borrow" completions from `cd`
 complete -c project -w cd
