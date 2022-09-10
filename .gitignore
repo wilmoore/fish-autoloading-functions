@@ -1,9 +1,10 @@
 *.fish
 !attach.fish
-!gist*.fish
-!project.fish
+!fish_prompt.fish
 !fish_user_key_bindings.fish
+!gist*.fish
+!isostamp.fish
+!project.fish
 !sessions.fish
 !xmanpage.fish
 !wifi.fish
-!isostamp.fish
