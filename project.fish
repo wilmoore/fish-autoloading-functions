@@ -1,3 +1,4 @@
+# `project` executes `tmux` generating a session name from the current directory name
 function project
   if [ (count $argv) -eq 0 ];
     echo "project [path][ --detached]"
